@@ -14,7 +14,7 @@ from rest_framework.response import Response
 @api_view(['GET'])
 def index(request):
     if request.method == 'GET':
-        category=Category.objects.all()
+        category=Category.objects.all().order_by('-id')
         serializer=CategorySerializer(category,many=True)
         return Response(serializer.data)
 
