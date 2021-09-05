@@ -8,7 +8,7 @@ from ckeditor.fields import RichTextField
 class Category(models.Model):
     name = models.CharField(max_length=100)
     color = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='images/', blank=True)
+    image = models.URLField(max_length=200, blank=True)
     description = models.TextField(blank=True)
     web= models.URLField(max_length=200, blank=True)
    
