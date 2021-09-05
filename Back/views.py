@@ -11,30 +11,30 @@ from rest_framework.response import Response
 
 
 # Create your views here.
-@api_view(['GET'])
+
 def index(request):
     if request.method == 'GET':
         category=Category.objects.all()
         serializer=CategorySerializer(category,many=True)
-        return Response(serializer.data)
+        return JsonResponse(serializer.data,safe=False)
 
-@api_view(['GET'])
+
 def project(request):
     if request.method == 'GET':
         project=Project.objects.all()
         serializer=ProjectSerializer(project,many=True)
-        return Response(serializer.data)        
+        return JsonResponse(serializer.data,safe=False)        
 
-@api_view(['GET'])
+
 def blog(request):
     if request.method == 'GET':
         blog=Blog.objects.all()
         serializer=BlogSerializer(blog,many=True)
-        return Response(serializer.data)
+        return JsonResponse(serializer.data,safe=False)
 
-@api_view(['GET'])
+
 def work(request):
     if request.method == 'GET':
         work=Work.objects.all()
         serializer=WorkSerializer(work,many=True)
-        return Response(serializer.data)        
+        return JsonResponse(serializer.data,safe=False)        
