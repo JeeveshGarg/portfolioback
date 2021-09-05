@@ -28,5 +28,6 @@ urlpatterns = [
     path('category/', views.index, name='index'),
     path('project/', views.project, name='project'),
     path('blog/', views.blog, name='blog'),
+    path('work/', views.work, name='index'),
     
 ] 
