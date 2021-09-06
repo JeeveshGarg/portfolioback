@@ -28,13 +28,13 @@ def project(request):
 @api_view(['GET'])
 def blog(request):
     if request.method == 'GET':
-        blog=Blog.objects.all()
+        blog=Blog.objects.all().order_by('-id')
         serializer=BlogSerializer(blog,many=True)
         return Response(serializer.data)
 
 @api_view(['GET'])
 def work(request):
     if request.method == 'GET':
-        work=Work.objects.all()
+        work=Work.objects.all().order_by('-id')
         serializer=WorkSerializer(work,many=True)
         return Response(serializer.data)  
