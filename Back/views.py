@@ -21,20 +21,20 @@ def index(request):
 @api_view(['GET'])
 def project(request):
     if request.method == 'GET':
-        project=Project.objects.all()
+        project=Project.objects.all().order_by('-id')
         serializer=ProjectSerializer(project,many=True)
         return Response(serializer.data)        
 
 @api_view(['GET'])
 def blog(request):
     if request.method == 'GET':
-        blog=Blog.objects.all()
+        blog=Blog.objects.all().order_by('-id')
         serializer=BlogSerializer(blog,many=True)
         return Response(serializer.data)
 
 @api_view(['GET'])
 def work(request):
     if request.method == 'GET':
-        work=Work.objects.all()
+        work=Work.objects.all().order_by('-id')
         serializer=WorkSerializer(work,many=True)
         return Response(serializer.data)  
