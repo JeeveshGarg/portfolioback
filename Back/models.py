@@ -20,7 +20,7 @@ class Project(models.Model):
     description = models.TextField()
     need= models.TextField(blank=True)
     tags= models.ManyToManyField(Category, blank=True)
-    image = models.ImageField(upload_to='images', blank=True)
+    image = models.ImageField(upload_to='project/images', blank=True)
     web= models.URLField(max_length=200, blank=True)
     github= models.CharField(max_length=200, blank=True)
     def __str__(self):
@@ -52,3 +52,5 @@ class Blog(models.Model):
     image = models.URLField(max_length=200, blank=True)
     def __str__(self):
         return self.title
+
+      
