@@ -21,7 +21,7 @@ def index(request):
 @api_view(['GET'])
 def project(request):
     if request.method == 'GET':
-        project=Project.objects.all()
+        project=Project.objects.all().order_by('-id')
         serializer=ProjectSerializer(project,many=True)
         return Response(serializer.data)        
 
