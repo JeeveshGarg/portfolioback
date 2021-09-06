@@ -23,7 +23,7 @@ class WorkSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Work
-        fields = ('id', 'name', 'description', 'image', 'tags','web')       
+        fields = ('id', 'name', 'description', 'image', 'tags','web','timeperiod')       
 
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:

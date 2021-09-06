@@ -38,6 +38,7 @@ class Work(models.Model):
     tags= models.ManyToManyField(Value, blank=True)
     image = models.URLField(max_length=200, blank=True)
     web= models.URLField(max_length=200, blank=True)
+    timeperiod= models.CharField(max_length=100, blank=True)
     def __str__(self):
         return self.name
 
